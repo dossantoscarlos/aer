@@ -1,0 +1,250 @@
+/****/
+
+.widthInput {
+    min-width: 400px;
+}
+
+input,
+select,
+textarea {
+    border: .5px solid #AAAAAA !important;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #ccc;
+}
+
+textarea {
+    resize: none;
+}
+
+a {
+    color: #FFF;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.cardlogin {
+    height: 500px;
+}
+
+.cardlogin {
+    border: 1px solid #51A6DE;
+}
+
+ul:not(.browser-default) {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.fixed-action-btn ul li {
+    margin-bottom: 15px;
+}
+
+.fixed-action-btn.direction-left,
+.fixed-action-btn.direction-right {
+    padding: 0 0 0 15px;
+}
+
+.fixed-action-btn.direction-left ul,
+.fixed-action-btn.direction-right ul {
+    text-align: right;
+    right: 64px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 100%;
+    left: auto;
+    width: 500px;
+}
+
+.fixed-action-btn.direction-left ul li,
+.fixed-action-btn.direction-right ul li {
+    display: inline-block;
+    margin: 7.5px 15px 0 0;
+}
+
+.list-card {
+    background-color: #FFFF
+}
+
+@media (max-width:600px) {
+    .list-card {
+        max-width: 560px !important;
+    }
+}
+
+@media (min-width: 720px) {
+    .list-card {
+        min-width: 600px !important;
+    }
+}
+
+@media (max-width: 1321px) {
+    .table-fixed {
+        display: none;
+    }
+}
+
+@media(min-height:901px) {
+    .wrapper {
+        margin-top: 10%;
+    }
+}
+
+@media(max-height:900px) {
+    .wrapper {
+        margin-top: 5%;
+    }
+}
+
+@media (min-width: 600px) {
+    .fab {
+        /* display: none; */
+    }
+}
+
+@media (min-width: 1322px) {
+    body {
+        background-color: #bdc3c7;
+    }
+    .table-fixed {
+        width: 100%;
+        background-color: #f3f3f3;
+    }
+    .table-fixed tbody {
+        cursor: pointer;
+        height: 200px;
+        overflow-y: auto;
+        width: 100%;
+    }
+    .table-fixed thead,
+    .table-fixed tbody,
+    .table-fixed tr,
+    .table-fixed td,
+    .table-fixed th {
+        display: block;
+    }
+    .table-fixed tbody td {
+        float: left;
+    }
+    .table-fixed thead tr th {
+        float: left;
+        color: #fff;
+        background-color: #51A6DE;
+        border-color: #51A6DE;
+    }
+}
+
+.fab {
+    position: fixed;
+    bottom: 10px;
+    border-radius: 30px;
+    background-color: #FFF;
+    right: 10px;
+}
+
+.fab button {
+    cursor: pointer;
+    width: 84px;
+    height: 84px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+    font-size: 24px;
+    color: white;
+    background-color: #fFF;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+}
+
+.fab button.main {
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    border-radius: 30px;
+    background-color: #FFF;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+}
+
+.fab ul {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    padding-right: 5px;
+    margin: 0;
+    list-style: none;
+    z-index: 10;
+    background-color: #FFF;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+}
+
+.fab ul li {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: -2%;
+    opacity: 0;
+    background-color: #FFF !important;
+    -webkit-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+    transition: .3s ease-out;
+}
+
+.fab ul li label {
+    margin-right: 10px;
+    white-space: nowrap;
+    display: block;
+    margin-top: 10px;
+    padding: 5px 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    height: 18px;
+    font-size: 16px;
+    pointer-events: none;
+    opacity: 0;
+    background-color: #FFF;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    transition: .2s ease-out;
+}
+
+.fab button.main:active,
+.fab button.main:focus {
+    outline: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .5);
+}
+
+.fab button.main:active:before,
+.fab button.main:focus:before {
+    background-color: #FFF;
+}
+
+.fab button.main:active+ul,
+.fab button.main:focus+ul {
+    bottom: 70px;
+}
+
+.fab button.main:active+ul li,
+.fab button.main:focus+ul li {
+    margin-bottom: 10px;
+    opacity: 1;
+}
+
+.fab button.main:active+ul li:hover label,
+.fab button.main:focus+ul li:hover label {
+    opacity: 1;
+}

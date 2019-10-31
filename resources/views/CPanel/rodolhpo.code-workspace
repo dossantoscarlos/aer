@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "C:\\Users\\KaEd\\Dolpho"
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"askForPassword": false,
+				"database": ".\\database\\database.sqlite",
+				"dialect": "SQLite",
+				"name": "dolpho"
+			}
+		],
+		"sqltools.useNodeRuntime": true
+	}
+}
