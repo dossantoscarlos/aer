@@ -16,7 +16,7 @@ class LoginsController extends Controller
         }
         $users = DB::table('usuarios')->count();
 
-        return view('cpanel.Login',['users' => $users]);
+        return view('cpanel.login',['users' => $users]);
     }
 
     public function auth(Request $request)
