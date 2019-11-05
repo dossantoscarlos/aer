@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/cliente.css') }}" />
 <div class="card">
  	<div class="card-header">
- 	    <h2 class="card-title">Cliente</h2>
+ 	    <h2 class="card-title">Cliente </h2>
      </div>
  	<div class="card-body">
     		<fieldset class="fieldset">
