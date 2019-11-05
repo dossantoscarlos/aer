@@ -15,7 +15,7 @@ class ConfigController extends Controller
 		if(session()->exists("user")):
 			return redirect()->route("dashboard");
    		endif;
-   		return view('Config');
+   		return view('config');
    	}
 
    public function create(Request $request)

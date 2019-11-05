@@ -8,7 +8,7 @@ class DashboardController extends Controller
 {
     public function index() {
    		if(session()->exists('user')){
-   			return view('CPanel.dashboard');
+   			return view('cpanel.dashboard');
    		}
 
    		return redirect()->route('login');

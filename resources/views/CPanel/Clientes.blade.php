@@ -1,5 +1,5 @@
 
-@extends('CPanel.layout')
+@extends('cpanel.layout')
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/cliente.css') }}" />
 <div class="card">

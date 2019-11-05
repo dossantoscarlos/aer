@@ -8,7 +8,7 @@ class ProdutosController extends Controller
 {
     public function index(){
         if (session()->exists("user")){
-            return view("CPanel.Produtos");
+            return view("cpanel.produtos");
         }
         return redirect()->route("login");
     }

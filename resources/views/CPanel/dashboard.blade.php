@@ -1,4 +1,4 @@
-@extends('CPanel.layout')
+@extends('cpanel.layout')
 @section('content')
 <style type="text/css">
     .nav-color a{

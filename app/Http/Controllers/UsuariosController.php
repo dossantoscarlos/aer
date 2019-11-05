@@ -10,7 +10,7 @@ class UsuariosController extends Controller
 {   
     public function index(){
         if (session()->exists("user")){
-            return view("CPanel.Usuarios");
+            return view("cpanel.usuarios");
         }
         return redirect()->route("login");
     }

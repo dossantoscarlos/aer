@@ -8,6 +8,6 @@ class groupsController extends Controller
 {
     public function index() {
     	
-    	return view('CPanel.groups');
+    	return view('cpanel.groups');
     }
 }

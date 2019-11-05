@@ -11,7 +11,7 @@ class ClientesController extends Controller
 {
     public function index(){
         if (session()->exists("user")){
-            return view('CPanel.clientes');
+            return view('cpanel.clientes');
         }
         return redirect()->route("login");
     }
