@@ -46,12 +46,12 @@ return [
 //mysql://b8b7d90ce3c794:8b2e8feb@us-cdbr-iron-east-05.cleardb.net/heroku_98c3975afaafd38?reconnect=true
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL',"mysql://b8b7d90ce3c794:8b2e8feb@us-cdbr-iron-east-05.cleardb.net/heroku_98c3975afaafd38?reconnect=true"),
-            'host' => env('DB_HOST', '8b2e8feb@us-cdbr-iron-east-05.cleardb.net'),
+            'url' => env('DATABASE_URL',"mysql://b8e0a5a26e1040:195fe561@us-cdbr-iron-east-05.cleardb.net/heroku_0f229cc37b04183?reconnect=true"),
+            'host' => env('DB_HOST', '195fe561@us-cdbr-iron-east-05.cleardb.net'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'heroku_98c3975afaafd38'),
-            'username' => env('DB_USERNAME', 'b8b7d90ce3c794'),
-            'password' => env('DB_PASSWORD', '8b2e8feb'),
+            'database' => env('DB_DATABASE', 'heroku_0f229cc37b04183'),
+            'username' => env('DB_USERNAME', 'b8e0a5a26e1040'),
+            'password' => env('DB_PASSWORD', '195fe561'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
