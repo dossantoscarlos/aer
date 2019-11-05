@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -43,14 +43,15 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', false),
         ],
 
+//mysql://b8b7d90ce3c794:8b2e8feb@us-cdbr-iron-east-05.cleardb.net/heroku_98c3975afaafd38?reconnect=true
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'mysql://b8b7d90ce3c794:8b2e8feb@us-cdbr-iron-east-05.cleardb.net'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'heroku_98c3975afaafd38'),
+            'username' => env('DB_USERNAME', 'b8b7d90ce3c794'),
+            'password' => env('DB_PASSWORD', '8b2e8feb'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
