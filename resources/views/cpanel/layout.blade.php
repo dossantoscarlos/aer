@@ -24,11 +24,11 @@
 </head>
 <body style="background-color:#FFFF">
         @if (session()->exists('user'))
-            @include('CPanel.navbar')
+            @include('cpanel.navbar')
             <div class="container-fluid">
                 <div class="row" style="height: 94vh">
                     <div class="col-md-1">
-                        @include('CPanel.sidebar')
+                        @include('cpanel.sidebar')
                     </div>
                     <div class="col-md-9 offset-md-1 justify-content-center" >
                         <div class="container-fluid" style="margin-left:-2%;margin-top:2%;margin-bottom:3%" >
