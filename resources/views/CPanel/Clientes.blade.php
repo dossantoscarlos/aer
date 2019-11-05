@@ -1,3 +1,4 @@
+
 @extends('CPanel.layout')
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/cliente.css') }}" />

@@ -24,7 +24,7 @@
                         <div class="field column is-12">
                             <div class="tile">
                                 <div class="field column is-6">
-                                    <label class="label" for="usuario">Usuario</label>
+                  4                  <label class="label" for="usuario">Usuario</label>
                                     <input type="text" name="usuario"  id="usuario" class="input is-large">
                                 </div>
                             </div>
