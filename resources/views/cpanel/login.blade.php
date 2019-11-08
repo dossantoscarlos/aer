@@ -1,4 +1,4 @@
-@extends('cpanel.layout')
+@extends('layouts.app')
 @section('content')
 <style type="text/css">
     *{

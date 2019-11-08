@@ -3,17 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+ 
+use Illuminate\Support\Facades\DB;
 
 class Cliente extends Model
 {
     public $timestamps = false;
     
-    public  $table = "clientes";
+    public $table = "clientes";
 
-    public function validaCamposCliente($objCliente) : Object {
-        
-        return $objCliente;
-    } 
+    protected $senha = null;
+
+    public function selectAll(){
+        return DB::table("clientes")->get();
+    }
 
     public function validaCPF($cpf) : Boolean{
         if($cpf):

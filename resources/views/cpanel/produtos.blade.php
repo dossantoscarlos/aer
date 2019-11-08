@@ -1,4 +1,4 @@
-@extends('cpanel.layout')
+@extends('layouts.app')
 @section('content')
    <section class="card">
         <header class="card-header">

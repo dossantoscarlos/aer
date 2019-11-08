@@ -12,6 +12,7 @@ class LoginsController extends Controller
 {
     public function show(){
         if(session()->exists('user')){
+            session()->regenerate();
             return redirect()->route('dashboard');
         }
         $users = DB::table('usuarios')->count();
@@ -30,16 +31,14 @@ class LoginsController extends Controller
         endif;
         $db = $db->first();
         if (\Hash::check($request->input('password'), $db->senha)):
-            $user = new Usuario();
-            if ($db != null):
-                $user->setNome($db->nome)
-                    ->setNivel($db->nivel)
-                    ->set_token($request->input('_token'));
+                $user = new Usuario();
+                $user->setNome($db->nome);
+                $user->setNivel($db->nivel);
+                $user->set_token($request->input('_token'));
 
                 session(['user'=> $user]);
 
                 return redirect()->route('dashboard');
-            endif;
         endif;
         return redirect()->route('login')->with('status',"error ao logar");
     }

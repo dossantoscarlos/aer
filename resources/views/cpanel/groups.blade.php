@@ -1,4 +1,4 @@
-@extends('cpanel.layout')
+@extends('layouts.app')
 @section('content')
 <div class="hero is-light">
 	<div class="hero-body">

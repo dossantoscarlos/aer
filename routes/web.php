@@ -44,3 +44,10 @@ Route::get('Usuarios', 'UsuariosController@index')->name("Usuario_index");
 Route::post("Usuarios", "UsuariosController@create")->name("Usuario_create");
 Route::put("Usuarios", "UsuariosController@update")->name("Usuario_update");
 Route::delete("Usuarios", "UsuariosController@delete")->name("Usuario_delete");
+
+Route::get("consultas", "ConsultasController@index")->name("Consulta_index");
+Route::get("pesquisas", "ConsultasController@consulta")->name("pesquisa");
+Route::get('/entendidades', 'ConsultasController@entendies')->name("entendies");
+
+
+Route::get('/home', 'HomeController@index')->name('home');

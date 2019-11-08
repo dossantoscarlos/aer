@@ -1,4 +1,4 @@
-@extends('cpanel.layout')
+@extends('layouts.app')
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/bulma/css/bulma.min.css') }}">
 <style>

@@ -20,7 +20,7 @@ const consultaCep = () => {
                     $("#cidade").val(dados.localidade);
                     $('#uf').children('option').val(dados.uf)
                     $('#uf').children('option').text(dados.uf).prop('selected','true');
-                    console.log(dados)
+                    
                 } //end if.
                 else {
                     //CEP pesquisado não foi encontrado.

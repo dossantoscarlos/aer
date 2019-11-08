@@ -2,8 +2,19 @@
 <div class="sidebar-sticky">
 	<div class="sidebar-wrapper">
 		<ul class="nav d-flex flex-column m-4 my-5">
+            
+                <li class="nav-item">
+                        <a href="{{ route('dashboard') }}" title='Consulta'>
+                        <div class="row">
+                            <span class="col-1">
+                                <i class="fa fa-home ic-w mr-1"></i>
+                            </span>
+                            <span class="col">Dashboard</span>
+                        </div>                   
+                        </a>
+                    </li>
             <li class="nav-item">
-                <a href="{{ route('Usuario_index') }}" title='Consulta'>
+                <a href="{{ route('Consulta_index') }}" title='Consulta'>
                 <div class="row">
                     <span class="col-1">
                         <i class="fa fa-search ic-w mr-1"></i>

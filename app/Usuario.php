@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Usuario extends Model
 {
-	 protected $nome;
-	 protected $nivel;
-	 protected $_token;
+	 public $nome;
+	 public $nivel;
+	 public $_token;
 
 	 function getNome(): String {
 	 	return $this->nome;
@@ -37,4 +38,8 @@ class Usuario extends Model
 	 	return $this;
 	 }
 
+	public function selectAll()
+	{
+		return DB::table('Usuarios')->select('nome','nivel')->get();
+	}
 }

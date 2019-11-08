@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Validator;
 use App\Cliente;
 
 class ClientesController extends Controller
 {
     public function index(){
         if (session()->exists("user")){
+            session()->regenerate();
             return view('cpanel.clientes');
         }
         return redirect()->route("login");
@@ -18,14 +20,10 @@ class ClientesController extends Controller
 
     public function create(Request $request){
         if(session()->exists("user")){ 
+            session()->regenerate();
             $json = json_decode($request->input("cliente"));
-
-            $cliente = new Cliente;
-            if ($cliente->validaCamposCliente($json)==false)
-            {
-                return response()->json(["result"=>"Um dos campos esta invalido"]);
-            }
             
+            $cliente = new Cliente;             
             $cliente->nome = $json->nome;
             $cliente->data_cad = $json->data_insc;
             $cliente->data_niver = $json->data_nasc;
@@ -49,6 +47,7 @@ class ClientesController extends Controller
 
     public function seacher($cpf){
         if(session()->exists('user')){
+            session()->regenerate();
             $cliente = new Cliente();
             if($cliente->validaCPF($cpf)):
                 $cliente = DB::table("clientes")->select("*")->where([
@@ -63,6 +62,7 @@ class ClientesController extends Controller
 
     public function update(){
         if (session()->exists("user")){
+            session()->regenerate();
             return response()->json(["error" => "Nao configurado"],"400");
         }
         return redirect()->route("login");
@@ -70,6 +70,7 @@ class ClientesController extends Controller
 
     public function delete(){
         if (session()->exists("user")){
+            session()->regenerate();
             return response()->json(["error"=> "Nao configurado"], "400");
         }
         return redirect()->route("login");
