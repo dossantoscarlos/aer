@@ -41,9 +41,8 @@ class LoginsController extends Controller
                 die();
                 return redirect()->route('dashboard');
         else:
-            return response()->json($db->senha);
+            return redirect()->route('login')->with('status','senha invalida');
         endif;
-
         return redirect()->route('login')->with('status',"error ao logar");
     }
 

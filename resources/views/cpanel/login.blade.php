@@ -96,7 +96,23 @@
 		</div>
 	</div>
 </div>
-{{-- 
+@if(isset(status))
+<div id="modal-error" class="modal is-active is-clipped">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <article class="message is-danger">
+        <div class="message-header">
+          <p>Alerta</p>
+          <button id='btnclosedelete' class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+			{{ status }}
+		</div>
+      </article>
+        </div>
+      </div>
+@endif
+	  {{-- 
 <script>
 	window.onload = function (){
 
