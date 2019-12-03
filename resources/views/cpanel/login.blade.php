@@ -100,17 +100,26 @@
 <script>
 	window.onload = function (){
 
-		var button  =  document.getElementById('btnsalvar')
-		button.addEventListener('click' , Connect ,false)
-		function Connect () {
-			alert("fimcotpm")
+		var button  = $('#btnsalvar')
+		var password = $('#password')
+		var token = $('input[type=hidden]')
+		var usuario = $('#usuario')
+		password.on('keypress', function(evt) {
+			if (evt.keyCode == 13){
+				connect()
+			}
+		})
+		button.on('click',  connect)
+		function connect()
+		{
+			function () {
 			axios({
-				url: '/config',
+				url: '/login',
 				method: 'post',
 				data:{
-					password: $('#password').val(),
-					_token: $('input[type=hidden]').val(),
-					usuario: $('#usuario').val()
+					password: password.val(),
+					_token: token.val(),
+					usuario: usuario.val()
 				}
 			}).then(resp => {
 				console.log(resp)
