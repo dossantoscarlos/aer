@@ -40,7 +40,10 @@ class LoginsController extends Controller
                 dump(session);
                 die();
                 return redirect()->route('dashboard');
+        else:
+            return response()->json($db-senha);
         endif;
+
         return redirect()->route('login')->with('status',"error ao logar");
     }
 
