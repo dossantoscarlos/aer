@@ -47,6 +47,13 @@
 		height: 100vh
 	}
 </style>
+@if($users == 0)
+<script async>
+	(()=>{
+		location.href="{{ route('config') }}"
+	})();
+</script>
+@else
 <div class="background-aer col-md-12">
 	<div class="d-flex justify-content-end">
 		<div class=" my-5 col-md-7 d-flex justify-content-end">
@@ -70,13 +77,7 @@
 										<label for="password" class="label">Password</label>
 										<input class="form-control " type="password" placeholder="Password" name="password" id="password">
 									</div>
-									@if($users == 0)
-										<script>
-											(()=>{
-												location.href="{{ route('config') }}"
-											})();
-										</script>
-									@else
+									
 									<div class="col-md-12 d-flex justify-content-center my-3">
 										<button class="btn btn-primary btn-lg" type="submit">
 											Login
