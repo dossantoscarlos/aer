@@ -37,7 +37,8 @@ class LoginsController extends Controller
                 $user->set_token($request->input('_token'));
 
                 session(['user'=> $user]);
-
+                dump(session)
+                die();
                 return redirect()->route('dashboard');
         endif;
         return redirect()->route('login')->with('status',"error ao logar");
