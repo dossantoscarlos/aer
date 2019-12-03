@@ -96,7 +96,7 @@
 		</div>
 	</div>
 </div>
-@if(isset(status))
+@if(session(status))
 <div id="modal-error" class="modal is-active is-clipped">
         <div class="modal-background"></div>
         <div class="modal-content">
