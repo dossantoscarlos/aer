@@ -5,31 +5,23 @@
         padding:3px;
     }
 	.bannerLogin{
-		background-color: initial;
 		background-size: contain;
 		background-position:center;
 		background-clip: border-box;
 		height: 100px;
-		background-image: url('{{asset("images/aerlogo.png")}}');
-		background-repeat: no-repeat;
+		background-image: url('{{asset("images/aerlogo.png")}}') ;
+		background-repeat:no-repeat;
+
 	}
 	.background-footer-card {
 		background-color: initial;
 		background-size: contain;
-		background-position:left;
+		background-position:center;
 		height: 50px;
 		/*background-image: url('{{asset("images/aerlogo.png")}}');*/
 		background-repeat: no-repeat;
 	}
-	.background-aer{
-		background-color: rgb(0,0,032);
-
-		background-size: contain;
-		background-image: url('{{asset("images/aericone.png")}}');
-		background-repeat: no-repeat;
-		background-position: left;
-		height: 100vh;
-	}
+	
 	.font{
 		font-style: normal;
 		font-size:14pt;
@@ -41,9 +33,18 @@
 		border-style: dashed;
 		border-color:  rgb(0,0,032);
 	}
+	.background-aer {
+		background-size: contain;
+		height: 100vh;
+		background-image: url('{{asset("images/aericone.png")}}');
+		background-repeat: no-repeat;
+		background-position: left;
+	}
 	body{
-		overflow: hidden;
-        background-color: black !important;
+		background-color: rgb(0,0,032) !important;
+		overflow-y: hidden;
+		overflow-x:hidden;
+		height: 100vh
 	}
 </style>
 <div class="background-aer col-md-12">

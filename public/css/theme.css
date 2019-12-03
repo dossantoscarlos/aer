@@ -1,85 +1,16 @@
 /*Tema do aplicativo*/
-
-.label {
-    font-size: 16pt !important;
-}
-a {
-    color:green;
-}
-html a:hover {
-    color:violet !important;
-}
-a:visited{
-    color:green!important;
-}
-
-body {
-    font-size: .875rem;
-}
-
-.feather {
-    width: 16px;
-    height: 16px;
-    vertical-align: text-bottom;
-}
-
-
-/*
- * Sidebar
- */
-
-.sidebar {
-    position:absolute;
-    top: 0;
-    width: 200px;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    background-color: #111;
-    z-index: 100;
-    /* Behind the navbar */
-    padding: 0 0 0;
-    /* Height of navbar */
-    /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1); */
-}
-
-.sidebar-sticky {
-    position: relative;
-    top: 0;
-    height: 100%;
-    font-size: 15pt;
-    padding-top: .5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-    /* Scrollable contents if viewport is shorter than content. */
-}
-
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-    .sidebar-sticky {
-        position: -webkit-sticky;
-        position: sticky;
-    }
-}
-
-.sidebar .nav-link {
-    font-weight: 500;
-    color: #333;
-}
-
-.sidebar .nav-link .feather {
-    margin-right: 4px;
-    color: #999;
-}
-
-.sidebar .nav-link.active {
-    color: #007bff;
-}
-
-.sidebar .nav-link:hover .feather,
-.sidebar .nav-link.active .feather {
-    color: inherit;
-}
-
+textarea{resize:none;}.content{margin-left:-2%;margin-top:2%;margin-bottom:3%;}.section-content-height{height: 94vh}.label{font-size: 16pt !important;}a{color:green;}html a:hover{color:violet !important;}
+a:visited{color:green!important;}
+body{background-color:#FFFF !important;font-size:.875rem;}
+.feather{width:16px;height:16px;vertical-align:text-bottom;}
+/**Sidebar*/
+.sidebar{position:absolute;top:0;width:220px;bottom:0;left:0;height:100%;background-color:#111;z-index:100;/* Behind the navbar */padding:0 0 0;/* Height of navbar *//* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1); */}
+.sidebar-sticky {position: relative;top 0;height:100%;font-size:15pt;padding-top:.5rem;overflow-x:hidden;overflow-y: auto;/* Scrollable contents if viewport is shorter than content. */}
+@supports ((position:-webkit-sticky)or(position: sticky)){.sidebar-sticky{position: -webkit-sticky;position: sticky;}}
+.sidebar .nav-link{font-weight: 500;color: #333;}
+.sidebar .nav-link .feather {margin-right: 4px;color: #999;}
+.sidebar .nav-link.active {color: #007bff;}
+.sidebar .nav-link:hover .feather,.sidebar .nav-link.active .feather {color: inherit;}
 .sidebar-heading {
     font-size: .75rem;
     text-transform: uppercase;

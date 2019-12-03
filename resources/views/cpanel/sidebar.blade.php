@@ -2,7 +2,6 @@
 <div class="sidebar-sticky">
 	<div class="sidebar-wrapper">
 		<ul class="nav d-flex flex-column m-4 my-5">
-            
                 <li class="nav-item">
                         <a href="{{ route('dashboard') }}" title='Consulta'>
                         <div class="row">
@@ -91,16 +90,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('Usuario_index') }}" title='Configuracao'>
-                    <div class="row">
-                        <span class="col-1">
-                            <i class="fa fa-cog ic-w mr-1"></i>
-                        </span>
-                        <span class="col">Configuração</span>
-                    </div>              
-                </a>
+                <div class="dropdown" style="color:green"> 
+                    <span><i class="fa fa-cog ic-w"></i>&nbsp;</span>
+                    <a title='Configuracao' class="dropdown-toggle" 
+                    id="menuConf"  data-toggle="dropdown" 
+                    aria-haspopup="true" aria-expanded="false">
+                        <span >Configuração</span>
+                    </a>
+                  <div class="dropdown-menu" aria-labelledby="menuConf">
+                    <a class="dropdown-item" href="{{ route('show_tipo_entidade') }}">{{ __('Cadastro do Tipo Entidade') }}</a>
+                  </div>
+                </div>
             </li>
-		</ul>
+		  </ul>
 		</div>
 	</div>
 </div>

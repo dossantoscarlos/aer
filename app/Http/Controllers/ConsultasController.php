@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 //modelos
 use App\Cliente;
@@ -11,73 +12,85 @@ use App\Venda;
 use App\Encomenda;
 use App\Historico;
 use App\Contrato;
+use App\Consulta;
 
 class ConsultasController extends Controller
 {
     public function index () {
         if(session()->exists("user"))
         {   
-        
-            return view("cpanel.consulta");
+            $entidade = DB::table('consultas')->get();
+            return view("cpanel.consulta", ["entidades" => $entidade]);
         }
     }
 
-    public function entendies (){
-        $entidades = [ "content" => [
-            ["code"=> 0, "descricao" => "Clientes"], 
-            ["code"=> 1, "descricao" => "Produtos"],
-            ["code"=> 2, "descricao" => "Usuarios"], 
-            ["code"=> 3, "descricao" => "Vendas"],
-            ["code"=> 4, "descricao" => "Encomendas"],
-            ["code"=> 5, "descricao" => "Historicos"],
-            ["code"=> 6, "descricao" => "Contratos"]
-            ]
-        ];
-        return response()->json($entidades);
+    public function show() {
+        if(session()->exists('user')):
+            return view('cpanel.tipo_consulta');
+        endif;
+        return redirect()->route('login');
     }
 
-    private function options($vclass) {
-        switch ($vclass) {
-            case '0':
-                return new Cliente;    
-                break;
-            case '1': 
-                return new Produto;
-                break;
-            case '2': 
-                return new Usuario;
-                break; 
-            case '3': 
-                return new Vendas;
-                break;
-            case '4':
-                return new Encomenda;
-                break;
-            case '5':
-                return new Historico;
-                break;
-            case '6':
-                return new Contratos;
-                break;
+    public function save(Request $request)
+    {
+        if(!session()->exists('user')){
+            return reponse()->route('login');
+        }
+
+        try {
+
+            $validacao = $request->validate([ 
+                'filtro' => 'required|max:100',
+                'descricao' =>'required|max:100'
+            ]);
+
+            $consulta = new Consulta;
             
+            $consulta->filtro = $request->input('filtro');
+            $consulta->descricao = strtolower($request->input('descricao'));
+            
+            $consulta->save();
+
+            return response()->json([
+                'content' => 'Salvo com sucesso !!!'
+            ]);
+
+        }catch(Exception $err){
+           return response()->json($err);
         }
+        
     }
 
     public function consulta (Request $request) {
         if (session()->exists("user")):
-            $class = $this->options($request->input("entidade"));
-            if ($class == null){
-                return response()->json([
-                    "content" => "Erro ao encontrar tabela contacte ao webmaster"
+            try{
+                $request->validate(array(
+                    'entidades' => 'required|numeric',
+                ));
+
+                $consulta = new Consulta;
+                $buscar = $request->input("buscar",'todos');
+                $codigo = $request->input('entidades');
+                      
+                $entidade = $consulta->find($codigo); 
+
+                if($buscar == "todos" ):
+                    $resultado = DB::table($entidade->descricao);
+                else:
+                	$resultado = DB::table($entidade->descricao)->where("$entidade->filtro", '=', $buscar);
+                endif;
+                $tabela = "components.table_".substr($entidade->descricao, 0, -1);
+                $entidade = DB::table('consultas')->get();
+                return view('cpanel.consulta',[
+                    'entidades'=> $entidade,
+                    'validarTabela' => $resultado->count(),
+                    'tabela' => $tabela, 
+                    'resultado' => $resultado->get(),
                 ]);
             }
-
-            $buscar = $request->input("busca",'todos');
-            if($buscar == "todos" ):
-                $resultado = $class->selectAll();
-            endif;
-            
-            return response()->json(["content" => $resultado]);
+            catch( Exception $err){
+                return response()->json($err);
+            }
         endif;
         return redirect()->route("login");
     }

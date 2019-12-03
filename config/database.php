@@ -43,7 +43,6 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', false),
         ],
 
-//mysql://b8b7d90ce3c794:8b2e8feb@us-cdbr-iron-east-05.cleardb.net/heroku_98c3975afaafd38?reconnect=true
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL',"mysql://b8e0a5a26e1040:195fe561@us-cdbr-iron-east-05.cleardb.net/heroku_0f229cc37b04183?reconnect=true"),

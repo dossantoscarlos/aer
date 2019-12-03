@@ -7,7 +7,6 @@
     .jumbheigth{
         padding: 1%;
     }
-  
 </style>
 <div class="jumbotron jumbheigth" >
     <div class="container">

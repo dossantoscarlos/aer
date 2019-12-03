@@ -2,42 +2,39 @@
 <html lang="{{ str_replace('_', '-', 'pt-br' )}}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" media="all">
     
-    <link href="{{ asset('css/all.css') }}" rel="stylesheet"> <!--load all styles -->
-    <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}"/>
-    <link type="text/css" rel="stylesheet" href="{{asset('css/dashboard.css')}}"/>
-    <link type="text/css" rel="stylesheet" href="{{asset('css/theme.css')}}"/>
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-</head>
-<body style="background-color:#FFFF">
-    
+    <link href="{{ asset('css/all.min.css') }}" rel="stylesheet" media="all" defer>
+    <link type="text/css" rel="stylesheet" href="{{asset('css/theme.css')}}" media="screen" />
+  </head>
+<body>
+    <noscript>
+        <div class="alert alert-warning">
+            <span class="text-center">
+                Habilite o javascript
+            </span>
+        </div>
+    </noscript>
         @if (session()->exists('user'))
         @include('cpanel.navbar')
             <div class="container-fluid">
-                <div class="row" style="height: 94vh">
+                <div class="row section-content-height">
                     <div class="col-md-1">
                         @include('cpanel.sidebar')
                     </div>
-                    <div class="col-md-9 offset-md-1 justify-content-center" >
-                        <div class="container-fluid" style="margin-left:-2%;margin-top:2%;margin-bottom:3%" >
+                    <div class="col-md-9 offset-md-2 offset-lg-1 justify-content-center" >
+                        <div class="container-fluid content">
                             @yield("content")
                          </div>
                     </div>
@@ -48,10 +45,13 @@
                 @yield('content')
             </div>
 		@endif
-        <script>
-                window.onload = function () {
-                    $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-                };
-        </script>
+        
+    <script type="text/javascript" defer>
+        window.onLoad = () => {
+            $.ajaxSetup({
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+            });
+        };
+    </script>
 </body>
 </html>
