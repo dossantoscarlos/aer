@@ -103,13 +103,14 @@
 		var button  =  document.getElementById('btnsalvar')
 		button.addEventListener('click' , Connect ,false)
 		function Connect () {
+			alert("fimcotpm")
 			axios({
 				url: '/config',
 				method: 'post',
 				data:{
-					password: document.getElementById('password'),
-					_token: document.getElementsByName('_token'),
-					usuario: document.getElementById('usuario')
+					password: $('#password').val(),
+					_token: $('input[type=hidden]').val(),
+					usuario: $('#usuario').val()
 				}
 			}).then(resp => {
 				console.log(resp)
