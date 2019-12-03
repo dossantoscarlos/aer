@@ -101,7 +101,7 @@
 	window.onload = function (){
 
 		var button  =  document.querySelector('button #btnsalvar')
-
+		button.addEventListener('click' , Connect ,false)
 		function Connect () {
 			axios({
 				url: '/config',
