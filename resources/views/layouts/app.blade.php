@@ -46,7 +46,7 @@
             </div>
 		@endif
         
-    <script type="text/javascript" defer>
+    <script type="text/javascript">
         window.onLoad = () => {
             $.ajaxSetup({
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
