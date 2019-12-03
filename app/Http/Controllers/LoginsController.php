@@ -37,7 +37,7 @@ class LoginsController extends Controller
                 $user->set_token($request->input('_token'));
 
                 session(['user'=> $user]);
-                dump(session)
+                dump(session);
                 die();
                 return redirect()->route('dashboard');
         endif;
