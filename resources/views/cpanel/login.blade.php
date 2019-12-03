@@ -100,16 +100,16 @@
 <script>
 	window.onload = function (){
 
-		var button  =  document.querySelector('button #btnsalvar')
+		var button  =  document.getElementById('btnsalvar')
 		button.addEventListener('click' , Connect ,false)
 		function Connect () {
 			axios({
 				url: '/config',
 				method: 'post',
 				data:{
-					password: document.querySelector('input #password'),
-					_token: document.querySelector('input[type=hidden]'),
-					usuario: document.querySelector('input #usuario')
+					password: document.getElementById('password'),
+					_token: document.getElementsByName('_token'),
+					usuario: document.getElementById('usuario')
 				}
 			}).then(resp => {
 				console.log(resp)
