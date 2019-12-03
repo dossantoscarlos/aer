@@ -110,9 +110,7 @@
 			}
 		})
 		button.on('click',  connect)
-		function connect()
-		{
-			function () {
+		function connect() {
 			axios({
 				url: '/login',
 				method: 'post',
