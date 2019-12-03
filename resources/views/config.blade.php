@@ -119,7 +119,7 @@
 
 			if(validaSenha($("#password").val(),$("#confpass").val()))
 			{		
-				var  caminho = $('form').attr('action');
+				var  caminho = '/config';
 				$.ajax({
 					method : "POST",
 					url: caminho,
@@ -134,6 +134,7 @@
 					},
 					fail: function (resp,status){
 						modalError(resp)
+						console.log(resp ,status)
 					}
 				});
 			}
