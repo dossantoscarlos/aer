@@ -79,7 +79,7 @@
 									</div>
 									
 									<div class="col-md-12 d-flex justify-content-center my-3">
-										<button class="btn btn-primary btn-lg" type="button" id='btnsalvar'>
+										<button class="btn btn-primary btn-lg" type="submit" id='btnsalvar'>
 											Login
 										</button>
 									</div>
@@ -96,7 +96,7 @@
 		</div>
 	</div>
 </div>
-
+{{-- 
 <script>
 	window.onload = function (){
 
@@ -126,5 +126,5 @@
 			})
 		}
 	}
-</script>
+</script> --}}
 @endsection
