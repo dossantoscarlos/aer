@@ -126,6 +126,7 @@
 					data : {
 						password: $('#password').val(),
 						usuario : $('#usuario').val(),
+						_token: $('input[type=hidden]').val(),
 						nivel : $('#nivel').val(),
 					},
 					success:function (response) {
