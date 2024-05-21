@@ -3,13 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
- 
+
 use Illuminate\Support\Facades\DB;
 
 class Cliente extends Model
 {
     public $timestamps = false;
-    
+
     public $table = "clientes";
 
     protected $senha = null;
@@ -18,7 +18,7 @@ class Cliente extends Model
         return DB::table("clientes")->get();
     }
 
-    public function validaCPF($cpf) : Boolean{
+    public function validaCPF($cpf): bool {
         if($cpf):
             return true;
         else:
